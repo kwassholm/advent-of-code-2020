@@ -18,7 +18,7 @@ contents =
   |> Stream.map(&String.to_integer(String.replace(&1, "\n", "")))
   |> Enum.map(& &1)
   |> Combinations.combinations(2)
-  |> Enum.filter(&(Enum.sum(&1) == 2020))
-  |> Enum.map(fn [a, b] -> a * b end)
+  |> Enum.find(&(Enum.sum(&1) == 2020))
+  |> (fn [a, b] -> a * b end).()
 
 IO.inspect(contents)
