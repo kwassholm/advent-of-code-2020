@@ -1,4 +1,4 @@
-to_left = 3
+to_right = 3
 
 {index_list, _} =
   File.stream!("./lib/3/input.txt")
@@ -8,11 +8,11 @@ to_left = 3
 
     x =
       cond do
-        x + to_left > String.length(row) - 1 ->
-          x - String.length(row) + to_left
+        x + to_right > String.length(row) - 1 ->
+          x - String.length(row) + to_right
 
         true ->
-          x + to_left
+          x + to_right
       end
 
     {char, x}
